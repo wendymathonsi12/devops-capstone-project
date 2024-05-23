@@ -15,7 +15,11 @@ RUN apt-get update && \
         software-properties-common \
         python3-pip \
         python3-dev
-
+#job         
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.9-slim
 # Installing K3D for local Kubernetes development
 RUN curl -s "https://raw.githubusercontent.com/rancher/k3d/main/install.sh" | sudo bash
 
